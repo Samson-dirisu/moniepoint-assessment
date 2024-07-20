@@ -42,11 +42,11 @@ class _MapScreenHeaderState extends State<MapScreenHeader>
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
-        return Transform.scale(
-          scale: _headerAnimation.value,
-          child: Row(
-            children: [
-              Expanded(
+        return Row(
+          children: [
+            Expanded(
+              child: Transform.scale(
+                scale: _headerAnimation.value,
                 child: TextField(
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(vertical: 15),
@@ -69,14 +69,17 @@ class _MapScreenHeaderState extends State<MapScreenHeader>
                   ),
                 ),
               ),
-              SizedBox(width: 10.w),
-              CircleAvatar(
+            ),
+            SizedBox(width: 10.w),
+            Transform.scale(
+              scale: _headerAnimation.value,
+              child: CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 25,
                 child: Icon(Icons.tune, color: appColors.black.withOpacity(.5)),
               ),
-            ],
-          ),
+            ),
+          ],
         );
       }
     );
