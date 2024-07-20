@@ -63,7 +63,7 @@ class _BottomNavScreenState extends State<BottomNavScreen>
       body: Stack(
         children: [
           FadeTransition(
-            opacity: _fadeController.drive(CurveTween(curve: Curves.easeIn)),
+            opacity: _fadeController.drive(CurveTween(curve: Curves.linear)),
             // child: IndexedStack(
             //   index: _selectedIndex,
             //   children: screens,
